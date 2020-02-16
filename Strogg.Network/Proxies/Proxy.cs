@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 
-namespace Strogg.Core.Proxies
+namespace Strogg.Network.Proxies
 {
     public class Proxy : IProxy
     {

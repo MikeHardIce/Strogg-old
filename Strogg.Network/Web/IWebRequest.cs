@@ -1,7 +1,7 @@
 
-using Strogg.Core.Proxies;
+using Strogg.Network.Proxies;
 
-namespace Strogg.Core.Web
+namespace Strogg.Network.Web
 {
     public interface IWebRequest
 	{

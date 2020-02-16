@@ -1,5 +1,5 @@
 
-namespace Strogg.Core.Web
+namespace Strogg.Network.Web
 {
     public interface IUrlManager
 	{

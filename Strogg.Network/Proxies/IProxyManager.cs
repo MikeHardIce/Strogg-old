@@ -1,7 +1,7 @@
 
-using Strogg.Core.Web;
+using Strogg.Network.Web;
 
-namespace Strogg.Core.Proxies
+namespace Strogg.Network.Proxies
 {
     public interface IProxyManager
 	{

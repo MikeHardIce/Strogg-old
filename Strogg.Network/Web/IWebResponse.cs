@@ -1,13 +1,15 @@
 
 using System.IO;
 using System.Net;
-using Strogg.Core.Proxies;
+using Strogg.Network.Proxies;
 
-namespace Strogg.Core.Web
+namespace Strogg.Network.Web
 {
     public interface IWebResponse
 	{
-		IProxy Proxy                    { get; }
+		string IpAddress                { get; }
+
+		int Port 						{ get; }
 		Stream ResponseStream           { get; }
 		HttpStatusCode HttpStatusCode   { get; } 
 		string ContentType              { get; }

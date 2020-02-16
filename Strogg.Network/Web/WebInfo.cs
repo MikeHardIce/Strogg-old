@@ -1,7 +1,7 @@
 
 using System.Net;
 
-namespace Strogg.Core.Web
+namespace Strogg.Network.Web
 {
     public class WebInfo : IWebInfo
 	{

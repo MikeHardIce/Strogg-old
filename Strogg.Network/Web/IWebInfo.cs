@@ -2,7 +2,7 @@
 using System;
 using System.Net;
 
-namespace Strogg.Core.Web
+namespace Strogg.Network.Web
 {
     public enum WebRequestMethod
 	{

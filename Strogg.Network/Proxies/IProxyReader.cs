@@ -1,7 +1,7 @@
 
 using System.Collections.Generic;
 
-namespace Strogg.Core.Proxies
+namespace Strogg.Network.Proxies
 {
     public interface IProxyReader
 	{

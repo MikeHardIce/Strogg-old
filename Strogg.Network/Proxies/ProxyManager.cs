@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using Microsoft.Extensions.Logging;
-using Strogg.Core.Web;
+using Strogg.Network.Web;
 
-namespace Strogg.Core.Proxies
+namespace Strogg.Network.Proxies
 {
     public class ProxyManager : IProxyManager
     {
@@ -70,6 +70,7 @@ namespace Strogg.Core.Proxies
         
         private ProxyRanking UseRanking ()
         {
+            // TODO: Rework!
             if(this.proxies.Count(m => m.Ranking == ProxyRanking.None) > 0)
             {
                 return ProxyRanking.None;
@@ -127,7 +128,7 @@ namespace Strogg.Core.Proxies
         {
             lock(this.lock1)
             {
-                IProxy proxy = this.proxies.Where(m => m.IpAddress == webResponse.Proxy.IpAddress && m.Port == webResponse.Proxy.Port).FirstOrDefault();
+                IProxy proxy = this.proxies.Where(m => m.IpAddress == webResponse.IpAddress && m.Port == webResponse.Port).FirstOrDefault();
 
                 if(proxy != null)
                 {

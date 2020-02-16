@@ -1,7 +1,7 @@
 
 using System.Net;
 
-namespace Strogg.Core.Proxies
+namespace Strogg.Network.Proxies
 {
 	public interface IProxy
 	{

@@ -1,5 +1,5 @@
 
-namespace Strogg.Core.Proxies
+namespace Strogg.Network.Proxies
 {
     public enum ProxyRanking
 	{
