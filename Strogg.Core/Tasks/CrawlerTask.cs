@@ -9,7 +9,7 @@ namespace Strogg.Core.Tasks
 {
     public class CrawlerTask : ITask
     {
-        public string KeyWord { get; set; }
+        public Queue<string> KeyWord { get; set; } = new Queue<string>();
 
         public string SearchTerm { get; set; }
 
@@ -25,12 +25,13 @@ namespace Strogg.Core.Tasks
         public object Clone()
         {
             var task = new CrawlerTask{
-                KeyWord         = KeyWord
-                , SearchTerm    = SearchTerm
+                SearchTerm    = SearchTerm
                 , Url           = Url
                 , OriginUrl     = OriginUrl
                 , Priority      = Priority
             };
+
+            CopyQueue(KeyWord, task.KeyWord);
 
             Data.Select(m => new SimpleData{
                 ContentHint     = m.ContentHint
@@ -40,6 +41,12 @@ namespace Strogg.Core.Tasks
             }).ToList().ForEach(m => task.Data.Add(m));
 
             return task;
+        }
+
+        public static void CopyQueue (Queue<string> from, Queue<string> to)
+        {
+            while(from.Count > 0)
+                to.Enqueue(from.Dequeue());
         }
     }
 }

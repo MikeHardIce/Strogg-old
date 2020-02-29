@@ -16,7 +16,7 @@ namespace Strogg.Network.Web
 
 		public void Add ( string url )
 		{
-			lock(lock1)
+			lock(this.lock1)
 			{
 				this.hashedUrls.Add(Transform(url));
 			}
@@ -25,14 +25,14 @@ namespace Strogg.Network.Web
 
 		public void Remove (string url)
 		{
-			lock(lock1)
+			lock(this.lock1)
 			{
 				this.hashedUrls.Remove(Transform(url));
 			}
 		}
 		public bool CanLoad ( string url )
 		{
-			lock(lock1)
+			lock(this.lock1)
 			{
 				int hashedUrl = Transform(url);
 				return !this.hashedUrls.Any(m => m == hashedUrl);
@@ -41,7 +41,7 @@ namespace Strogg.Network.Web
 
 		public void ClearAll ( )
 		{
-			lock(lock1)
+			lock(this.lock1)
 			{
 				this.hashedUrls.Clear();
 			}
